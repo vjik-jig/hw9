@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ДЗ № 9</title>
+  </head>
+  <body>
+    <script>
+      function sum() {
+        var i = 0;
+        return function(j) {
+          return (i += j);
+        };
+      }
+
+      var sumOlolo = sum();
+      console.log(sumOlolo(3));
+      console.log(sumOlolo(5));
+      console.log(sumOlolo(20));
+
+      // Счетчик модифицированный
+
+      function counter() {
+        var i = 0;
+        return function(step, j) {
+          i = j || i;
+          return (i += step);
+        };
+      }
+      var conterOne = counter();
+      console.log(conterOne(2, 4)); // Первое значение - шаг счетчика, Второе значение (не обязательное) - начальный аргумент счетчика
+      console.log(conterOne(2));
+      console.log(conterOne(2));
+      console.log(conterOne(2));
+    </script>
+  </body>
+</html>
