@@ -24,16 +24,18 @@
 
       function counter() {
         var i = 0;
+        var n = 1;
         return function(step, j) {
           i = j || i;
-          return (i += step);
+          n = step || n;
+          return (i += n);
         };
       }
       var conterOne = counter();
       console.log(conterOne(2, 4)); // Первое значение - шаг счетчика, Второе значение (не обязательное) - начальный аргумент счетчика
-      console.log(conterOne(2));
-      console.log(conterOne(2));
-      console.log(conterOne(2));
+      console.log(conterOne());
+      console.log(conterOne());
+      console.log(conterOne());
     </script>
   </body>
 </html>
